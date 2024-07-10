@@ -25,15 +25,16 @@ El proyecto fue desarrollado por **Franco Narvaez**.
 
 1. Clona este repositorio en tu máquina local.
    ```bash
-   git clone https://github.com/tu-usuario/tu-repositorio.git```
-##Uso
+   git clone https://github.com/tu-usuario/tu-repositorio.git``` ´´´
+
+## Uso
 
 Desde la terminal
 1. cd directorioDondeSeClono
 2. python interfaz.py
 3. Ingresar valores a calcular (la division entre entero y decimal en un punto . osea 3.7 o 7.09083442)
 
-##Librerias usadas
+## Librerias usadas
 Basicas de Python
 tkinter
 unittest
