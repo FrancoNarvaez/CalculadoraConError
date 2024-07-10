@@ -13,6 +13,12 @@ class TestCalculadoraConError(unittest.TestCase):
         # El error debería ser 0.05 (para 3.9) + 0.05 (para 2.1) = 0.1
         self.assertAlmostEqual(error, 0.1)
 
+    def test_sumar_2(self):
+        resultado, error = self.calc.sumar(7, 3)
+        self.assertEqual(resultado, 10)
+        # El error debería ser 0.5 (para 7) + 0.5 (para 3) = 1.0
+        self.assertEqual(error, 1.0)
+
     def test_restar(self):
         resultado, error = self.calc.restar(5, 3)
         self.assertEqual(resultado, 2)
@@ -20,10 +26,10 @@ class TestCalculadoraConError(unittest.TestCase):
         self.assertAlmostEqual(error, 1.0)
 
     def test_multiplicar(self):
-        resultado, error = self.calc.multiplicar(2.5, 4.0)
+        resultado, error = self.calc.multiplicar(2.5, 4)
         self.assertEqual(resultado, 10.0)
-        # El error relativo sería 0.05/2.5 (para 2.5) + 0.05/4.0 (para 4.0) = 0.02 + 0.0125 = 0.0325
-        self.assertAlmostEqual(error, 10.0 * 0.0325)
+        # El error relativo sería 0.05/2.5 (para 2.5) + 0.5/4.0 (para 4.0) = 0.02 + 0.0125 = 0.0325
+        self.assertAlmostEqual(error, 10.0 * 0.145)
 
     def test_dividir(self):
         resultado, error = self.calc.dividir(7, 2)

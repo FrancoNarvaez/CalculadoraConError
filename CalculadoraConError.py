@@ -9,20 +9,18 @@ class CalculadoraConError:
     def calcular_cota_error(self, valor):
         if valor == 0:
             return 0
-        partes = str(valor).split('.')
-        if len(partes) == 2:
-            cifras_decimales = len(partes[1])
+        if isinstance(valor, int) or valor.is_integer():
+            cota_error = 0.5
         else:
-            cifras_decimales = 0
-        cota_error = 0.5 * 10**(-cifras_decimales)
+            partes = str(valor).split('.')
+            cifras_decimales = len(partes[1]) if len(partes) == 2 else 0
+            cota_error = 0.5 * 10**(-cifras_decimales)
         return cota_error
 
     def sumar(self, a, b):
         cota_error_a = self.calcular_cota_error(a)
         cota_error_b = self.calcular_cota_error(b)
         self.resultado = a + b
-        print(f"Cota error a: {cota_error_a}")
-        print(f"Cota error b: {cota_error_b}")
         self.error = cota_error_a + cota_error_b
         return self.resultado, self.error
 
