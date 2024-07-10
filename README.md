@@ -35,6 +35,7 @@ Desde la terminal
 3. Ingresar valores a calcular (la division entre entero y decimal en un punto . osea 3.7 o 7.09083442)
 
 ## Librerias usadas
-Basicas de Python
-tkinter
-unittest
+
+1. Basicas de Python
+2. tkinter
+3. unittest
